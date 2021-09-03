@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Demo01_Paginas.Paginas.PaginaProducto"
+             Title="Página de Productos">
+    <ContentPage.Content>
+        <Grid Margin="10"
+              RowSpacing="10"
+              ColumnSpacing="10"
+              ColumnDefinitions="*, 2*"
+              RowDefinitions="*,*,*,*,Auto,*">
+
+            <Label Grid.Row="0"
+                   Grid.Column="0"
+                   VerticalOptions="Center"
+                   Text="Descripcion"/>
+
+            <Editor Grid.Row="0"
+                    Grid.Column="1"
+                    x:Name="editorDescripcion"
+                    HeightRequest="200"/>
+
+            <Label Grid.Row="1"
+                   Grid.Column="0"
+                   VerticalOptions="Center"
+                   Text="¿Tiene Descuento?"/>
+
+            <Switch Grid.Row="1"
+                    Grid.Column="1"
+                    OnColor="Green"
+                    ThumbColor="Blue"
+                    HorizontalOptions="Start"/>
+
+            <Label Grid.Row="2"
+                   Grid.Column="0"
+                   VerticalOptions="Center"
+                   Text="Precio"/>
+
+            <Slider Grid.Row="2"
+                    Grid.Column="1"
+                    x:Name="sliderPrecio"
+                    Maximum="100"
+                    Value="30"
+                    Minimum="10"
+                    ThumbColor="Green"
+                    MinimumTrackColor="Orange"
+                    MaximumTrackColor="Red"
+                    />
+
+            <Label Grid.Row="3"
+                   Grid.Column="1"
+                   FontSize="Large"
+                   Text="{Binding Source={x:Reference sliderPrecio},
+                                    Path=Value,
+                                    StringFormat='El precio es {0:C2}'}"/>
+
+            <Image Grid.Row="4"
+                   Grid.Column="1"
+                   WidthRequest="100"
+                   HeightRequest="200"
+                   HorizontalOptions="Start"
+                   Source="icon.png"/>
+
+
+
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

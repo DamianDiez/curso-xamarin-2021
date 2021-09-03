@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Demo01_Paginas.Paginas.PaginaLogin">
+    <ContentPage.Content>
+        <Grid VerticalOptions="Center"
+              RowDefinitions="Auto,Auto,Auto"
+              ColumnDefinitions="*,2*"
+              Margin="20,10,15,30"
+              RowSpacing="15"
+              ColumnSpacing="15">
+            <Label Grid.Row="0" 
+                   Grid.Column="0"
+                   Text="Usuario"
+                   FontSize="Large"
+                   VerticalOptions="Center"
+                   TextColor="Blue"/>
+
+            <Label Grid.Row="1"
+                   Grid.Column="0"
+                   Text="Password"
+                   FontSize="Large"
+                   VerticalOptions="Center"
+                   TextColor="Blue"/>
+
+            <Entry Grid.Row="0"
+                   Grid.Column="1"
+                   x:Name="entryClave"
+                   Placeholder="Introduzca su clave"
+                   BackgroundColor="LightYellow"
+                   TextColor="DarkGreen"
+                   FontSize="Medium"
+                   WidthRequest="200"
+                   Keyboard="Numeric"
+                   HorizontalOptions="Start"/>
+
+            <Entry Grid.Row="1"
+                   Grid.Column="1"
+                   x:Name="entryPassword"
+                   Placeholder="Introduzca su contraseña"
+                   BackgroundColor="LightYellow"
+                   TextColor="DarkGreen"
+                   FontSize="Medium"
+                   WidthRequest="200"
+                   IsPassword="True"
+                   HorizontalOptions="Start"/>
+
+            <Button Grid.Row="2"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    HorizontalOptions="Center"
+                    Text="Iniciar sesión"
+                    BackgroundColor="#ff4411"
+                    TextColor="#ffffff"
+                    CornerRadius="20"
+                    WidthRequest="200"
+                    Clicked="Button_Clicked"/>
+
+        </Grid>
+        <!--<Grid VerticalOptions="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            
+        </Grid>-->
+    </ContentPage.Content>
+</ContentPage>
