@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 x:Class="DemoEstructura.PaginaInicial">
+    <ContentPage.Content>
+        <StackLayout 
+			VerticalOptions="Center"
+			x:Name="stack">
+            <Label Text="Welcome to Xamarin.Forms!" 
+					   TextColor="Green" 
+                   FontSize="Large" VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="CenterAndExpand" />
+
+            <Button Text="Saludar" 
+                    Clicked="Button_Clicked"/>
+
+            <Button Text="Agregar hora"
+					x:Name="btnAgregarHora"
+					Clicked="btnAgregarHora_Clicked"/>
+
+            <Button Text="Limpiar horas"
+					x:Name="btnLimpiar"
+					Clicked="btnLimpiar_Clicked"/>
+            
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
