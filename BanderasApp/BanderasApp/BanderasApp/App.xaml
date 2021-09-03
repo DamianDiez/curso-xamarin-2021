@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application
+    x:Class="BanderasApp.App"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Application.Resources>
+        <Color x:Key="colorFondo">#152F3E</Color>
+        <Color x:Key="colorPrincipal">#FFA700</Color>
+        <Color x:Key="colorSecundario">#FAE072</Color>
+        <x:Double x:Key="espacio">5</x:Double>
+
+        <SolidColorBrush x:Key="brochaPrincipal" Color="{StaticResource colorPrincipal}" />
+        <SolidColorBrush x:Key="brochaSecundaria" Color="{StaticResource colorSecundario}" />
+
+        <Thickness x:Key="margen">10</Thickness>
+
+        <Style x:Key="gridContenido" TargetType="Grid">
+            <Setter Property="Margin" Value="{StaticResource margen}" />
+            <Setter Property="RowSpacing" Value="{StaticResource espacio}" />
+            <Setter Property="ColumnSpacing" Value="{StaticResource espacio}" />
+        </Style>
+
+        <Style x:Key="labelPrincipal" TargetType="Label">
+            <Setter Property="FontSize" Value="Large" />
+            <Setter Property="TextColor" Value="{StaticResource colorPrincipal}" />
+            <Setter Property="FontFamily" Value="MuliBold" />
+            <Setter Property="FontAttributes" Value="Bold" />
+        </Style>
+
+        <Style
+            x:Key="labelTitulo"
+            BasedOn="{StaticResource labelPrincipal}"
+            TargetType="Label">
+            <Setter Property="FontFamily" Value="MuliBlack" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+        </Style>
+
+        <Style
+            x:Key="labelNormal"
+            BasedOn="{StaticResource labelPrincipal}"
+            TargetType="Label">
+            <Setter Property="FontFamily" Value="MuliRegular" />
+            <Setter Property="FontSize" Value="Medium" />
+            <Setter Property="FontAttributes" Value="None" />
+            <Setter Property="HorizontalOptions" Value="Start" />
+        </Style>
+
+        <Style
+            x:Key="labelSubtitulo"
+            BasedOn="{StaticResource labelNormal}"
+            TargetType="Label">
+            <Setter Property="FontAttributes" Value="Italic" />
+            <Setter Property="TextColor" Value="{StaticResource colorSecundario}" />
+        </Style>
+
+        <Style x:Key="bandera" TargetType="Image">
+            <Setter Property="WidthRequest" Value="250" />
+            <Setter Property="HeightRequest" Value="200" />
+            <Setter Property="Aspect" Value="AspectFit" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+        </Style>
+
+        <ControlTemplate x:Key="RadioButtonTemplate">
+            <Frame
+                Padding="0"
+                BackgroundColor="{StaticResource colorFondo}"
+                BorderColor="{StaticResource colorFondo}"
+                HasShadow="False"
+                WidthRequest="300"
+                HeightRequest="40"
+                HorizontalOptions="Start"
+                VerticalOptions="Start">
+                <Grid Margin="4" WidthRequest="300">
+                    <Grid
+                        HeightRequest="18"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Start"
+                        WidthRequest="18">
+                        <Ellipse
+                            Fill="White"
+                            HeightRequest="16"
+                            HorizontalOptions="Center"
+                            Stroke="{StaticResource brochaPrincipal}"
+                            VerticalOptions="Center"
+                            WidthRequest="16" />
+                        <Ellipse
+                            x:Name="check"
+                            Fill="{StaticResource brochaPrincipal}"
+                            HeightRequest="8"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            WidthRequest="8" />
+                    </Grid>
+                    <ContentPresenter Margin="20,0,0,0" />
+                </Grid>
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CheckedStates">
+                            <VisualState x:Name="Checked">
+                                <VisualState.Setters>
+                                    <Setter Property="BorderColor" Value="{StaticResource colorPrincipal}" />
+                                    <Setter TargetName="check" Property="Opacity" Value="1" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Unchecked">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{StaticResource colorFondo}" />
+                                    <Setter Property="BorderColor" Value="{StaticResource colorFondo}" />
+                                    <Setter TargetName="check" Property="Opacity" Value="0" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </VisualStateManager.VisualStateGroups>
+            </Frame>
+        </ControlTemplate>
+
+        <Style x:Key="opcionPais" TargetType="RadioButton">
+            <Setter Property="ControlTemplate" Value="{StaticResource RadioButtonTemplate}" />
+        </Style>
+
+        <Style x:Key="botonPrincipal" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource brochaSecundaria}" />
+            <Setter Property="TextColor" Value="{StaticResource colorFondo}" />
+            <Setter Property="CornerRadius" Value="20" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="WidthRequest" Value="200" />
+        </Style>
+
+    </Application.Resources>
+</Application>
