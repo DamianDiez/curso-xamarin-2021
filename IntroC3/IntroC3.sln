@@ -13,8 +13,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo04_Linq", "Demo04_Linq\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo05_Excepciones", "Demo05_Excepciones\Demo05_Excepciones.csproj", "{6AF3094C-521B-4A27-892A-EDBE1D42A024}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo06_Genericos", "Demo06_Genericos\Demo06_Genericos.csproj", "{51CBDB82-77C0-4AB1-8239-B29485CBADCD}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo06_Genericos_Async_Serializacion", "Demo06_Genericos_Async_Serializacion\Demo06_Genericos_Async_Serializacion.csproj", "{2940DD6E-6AF2-4AE3-8542-3F6A5458EF78}"
 EndProject
 Global
@@ -43,10 +41,6 @@ Global
 		{6AF3094C-521B-4A27-892A-EDBE1D42A024}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6AF3094C-521B-4A27-892A-EDBE1D42A024}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6AF3094C-521B-4A27-892A-EDBE1D42A024}.Release|Any CPU.Build.0 = Release|Any CPU
-		{51CBDB82-77C0-4AB1-8239-B29485CBADCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{51CBDB82-77C0-4AB1-8239-B29485CBADCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{51CBDB82-77C0-4AB1-8239-B29485CBADCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{51CBDB82-77C0-4AB1-8239-B29485CBADCD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2940DD6E-6AF2-4AE3-8542-3F6A5458EF78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2940DD6E-6AF2-4AE3-8542-3F6A5458EF78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2940DD6E-6AF2-4AE3-8542-3F6A5458EF78}.Release|Any CPU.ActiveCfg = Release|Any CPU

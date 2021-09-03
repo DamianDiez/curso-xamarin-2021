@@ -42,8 +42,6 @@ namespace Demo06_Genericos_Async_Serializacion
 
             //var srvProducto = new ServicioArchivo<Producto>();
             //srvProducto.Guardar("productos.json", listaProductos);
-
-
         }
     }
 }
