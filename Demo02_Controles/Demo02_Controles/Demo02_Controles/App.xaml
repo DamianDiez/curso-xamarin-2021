@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Demo02_Controles.App">
+    <Application.Resources>
+        <Style TargetType="Label" x:Key="labelBase">
+            <Setter Property="VerticalOptions" Value="Center"/>
+        </Style>
+
+        <Style TargetType="Label" x:Key="labelTitulo2" 
+               BasedOn="{StaticResource labelBase}">
+            <Setter Property="FontSize" Value="Large"/>
+            <Setter Property="TextColor" Value="DarkGreen"/>
+            <Setter Property="VerticalOptions" Value="End"/>
+        </Style>
+
+        <Style TargetType="Label" x:Key="labelSubtitulo"
+               BasedOn="{StaticResource labelBase}">
+            <Setter Property="VerticalOptions" Value="End"/>
+        </Style>
+
+    </Application.Resources>
+</Application>

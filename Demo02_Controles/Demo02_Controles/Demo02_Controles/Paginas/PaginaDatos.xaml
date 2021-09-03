@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Demo02_Controles.Paginas.PaginaDatos">
+
+    <ContentPage.Resources>
+<!--
+        <Style TargetType="Label" x:Key="labelBase">
+            <Setter Property="VerticalOptions" Value="Center"/>
+        </Style>
+        
+        <Style TargetType="Label" x:Key="labelTitulo" 
+               BasedOn="{StaticResource labelBase}">
+            <Setter Property="FontSize" Value="Large"/>
+            <Setter Property="TextColor" Value="Red"/>
+            <Setter Property="VerticalOptions" Value="End"/>
+        </Style>
+
+        <Style TargetType="Label" x:Key="labelSubtitulo"
+               BasedOn="{StaticResource labelBase}">
+            <Setter Property="VerticalOptions" Value="End"/>
+        </Style>-->
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <Grid Margin="20"
+              RowSpacing="10"
+              ColumnSpacing="10"
+              RowDefinitions="100,Auto,Auto,*,2*"
+              ColumnDefinitions="*,2*">
+
+            <Grid.Resources>
+                
+            </Grid.Resources>
+            
+            <Label Text="Nombre" Style="{StaticResource labelTitulo2}"
+                   />
+
+            <Entry Grid.Column="1" 
+                   BackgroundColor="LightGreen"
+                   WidthRequest="200"
+                   HeightRequest="60"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   />
+
+            <Label Grid.Row="1" 
+                   Grid.Column="0"
+                   Text="Fecha de Ingreso"
+                   HeightRequest="200"
+                   Style="{StaticResource labelTitulo2}"
+                   />
+
+            <DatePicker Grid.Row="1"
+                        Grid.Column="1" 
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   />
+
+            <Label Grid.Row="2"
+                   Grid.Column="0"
+                   Text="Hora de ingreso"
+                   FontSize="Medium"
+                   TextColor="Green"/>
+
+        </Grid>
+              
+    </ContentPage.Content>
+</ContentPage>
