@@ -10,7 +10,15 @@ namespace BanderasApp
         {
             InitializeComponent();
 
-            MainPage = new Paginas.PaginaJuego();
+            //MainPage = new NavigationPage(new Paginas.PaginaJuego());
+            MainPage = new AppShell();
+
+            OSAppTheme t = Application.Current.RequestedTheme;
+
+            Application.Current.RequestedThemeChanged += (s, a) =>
+            {
+                // Para detectar esto en Android requerimos ConfigChanges.UiMode en MainActivity (por defecto ya estaba esa opcion)
+            };
         }
 
         protected override void OnStart()

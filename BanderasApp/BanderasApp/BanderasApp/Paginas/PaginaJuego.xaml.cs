@@ -8,6 +8,7 @@ using Xamarin.Forms.Xaml;
 
 using BanderasApp.Clases;
 using BanderasApp.Servicios;
+using Xamarin.Essentials;
 
 namespace BanderasApp.Paginas
 {
@@ -27,13 +28,16 @@ namespace BanderasApp.Paginas
         Random generador;
         List<Pais> paisesOpcion;
         int respuestaCorrecta;
-        int respuestaElegida;
+        int respuestaElegida = -1;
+        bool primerTurno = true;
 
         async Task CargarDatos()
         {
             indicador.IsRunning = true;
+
             generador = new Random();
             paises = await ServicioApi.ObtenerPaises();
+
             indicador.IsRunning = false;
         }
 
@@ -43,8 +47,12 @@ namespace BanderasApp.Paginas
             radioOpcion2.IsChecked = false;
             radioOpcion3.IsChecked = false;
             radioOpcion4.IsChecked = false;
+            btnResponder.IsEnabled = false;
+            btnVerDetalle.IsEnabled = false;
 
             respuestaElegida = -1;
+            primerTurno = false;
+            puntos = Preferences.Get("puntos", 10);
         }
 
         void GenerarOpcion(RadioButton rb, string texto)
@@ -98,6 +106,7 @@ namespace BanderasApp.Paginas
             GenerarOpcion(radioOpcion3, paisesOpcion[2].CountryName);
             GenerarOpcion(radioOpcion4, paisesOpcion[3].CountryName);
 
+            btnResponder.IsEnabled = true;
             indicador.IsRunning = false;
         }
 
@@ -111,6 +120,8 @@ namespace BanderasApp.Paginas
 
         private async void btnResponder_Clicked(object sender, EventArgs e)
         {
+            btnResponder.IsEnabled = false;
+
             string mensaje;
             Pais paisPregunta = paisesOpcion[respuestaCorrecta - 1];
             labelRespuesta.Text = $"Respuesta: {paisPregunta.CountryName}";
@@ -127,8 +138,9 @@ namespace BanderasApp.Paginas
             }
 
             labelScore.Text = $"Score: {score} puntos";
+            btnVerDetalle.IsEnabled = true;
             await DisplayAlert("Resultado", mensaje, "OK");
-            await Task.Delay(3000);
+            await Task.Delay(10000);
 
             await GenerarPregunta();
         }
@@ -136,8 +148,20 @@ namespace BanderasApp.Paginas
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            await CargarDatos();
-            await GenerarPregunta();
+
+            if (paises == null)
+                await CargarDatos();
+            
+            if (primerTurno)
+                await GenerarPregunta();
+        }
+
+        private async void btnVerDetalle_Clicked(object sender, EventArgs e)
+        {
+            Pais paisPregunta = paisesOpcion[respuestaCorrecta - 1];
+            var pagina = new PaginaDetalle(paisPregunta);
+
+            await Navigation.PushModalAsync(pagina);
         }
     }
 }

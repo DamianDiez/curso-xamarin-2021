@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell
+    x:Class="BanderasApp.AppShell"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:paginas="clr-namespace:BanderasApp.Paginas">
+    <FlyoutItem Title="Juego de Banderas" FlyoutDisplayOptions="AsMultipleItems">
+        <Tab Title="Configuracion">
+            <ShellContent ContentTemplate="{DataTemplate paginas:PaginaConfiguracion}" />
+        </Tab>
+
+        <Tab Title="Jugar">
+            <ShellContent ContentTemplate="{DataTemplate paginas:PaginaJuego}" />
+        </Tab>
+    </FlyoutItem>
+</Shell>
