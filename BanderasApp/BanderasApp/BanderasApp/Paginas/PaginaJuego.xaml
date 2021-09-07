@@ -3,101 +3,113 @@
     x:Class="BanderasApp.Paginas.PaginaJuego"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    BackgroundColor="{StaticResource colorFondo}">
+    Title="Juego de Banderas"
+    BackgroundColor="{AppThemeBinding Dark={StaticResource colorFondo},
+                                      Light={StaticResource colorFondoClaro}}">
     <ContentPage.Content>
-        <Grid Style="{StaticResource gridContenido}"
-              RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto" >
+        <ScrollView>
+            <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto" Style="{StaticResource gridContenido}">
 
-            <Label
-                x:Name="labelScore"
-                Grid.Row="0"
-                Style="{StaticResource labelTitulo}"
-                Text="Score: 0 puntos" />
+                <Label
+                    x:Name="labelScore"
+                    Grid.Row="0"
+                    Style="{StaticResource labelTitulo}"
+                    Text="Score: 0 puntos" />
 
-            <ActivityIndicator
-                x:Name="indicador"
-                Grid.Row="1"
-                Color="{StaticResource colorSecundario}" />
+                <ActivityIndicator
+                    x:Name="indicador"
+                    Grid.Row="1"
+                    Color="{AppThemeBinding Dark={StaticResource colorSecundario},
+                                            Light={StaticResource colorSecundarioClaro}}" />
 
-            <Label
-                Grid.Row="2"
-                Style="{StaticResource labelNormal}"
-                Text="¿A qué país pertenece esta bandera?" />
+                <Label
+                    Grid.Row="2"
+                    Style="{StaticResource labelNormal}"
+                    Text="¿A qué país pertenece esta bandera?" />
 
-            <Image
-                x:Name="imagenBandera"
-                Grid.Row="3"
-                Style="{StaticResource bandera}" />
+                <Image
+                    x:Name="imagenBandera"
+                    Grid.Row="3"
+                    Style="{StaticResource bandera}" />
 
-            <RadioButton
-                x:Name="radioOpcion1"
-                Grid.Row="4"
-                Style="{StaticResource opcionPais}"
-                Value="1"
-                CheckedChanged="radioOpcion_CheckedChanged">
+                <RadioButton
+                    x:Name="radioOpcion1"
+                    Grid.Row="4"
+                    CheckedChanged="radioOpcion_CheckedChanged"
+                    Style="{StaticResource opcionPais}"
+                    Value="1">
 
-                <RadioButton.Content>
-                    <StackLayout>
-                        <Label Style="{StaticResource labelNormal}" Text="Opcion 1" />
-                    </StackLayout>
-                </RadioButton.Content>
-            </RadioButton>
+                    <RadioButton.Content>
+                        <StackLayout>
+                            <Label Style="{StaticResource labelNormal}" Text="Opcion 1" />
+                        </StackLayout>
+                    </RadioButton.Content>
+                </RadioButton>
 
-            <RadioButton
-                x:Name="radioOpcion2"
-                Grid.Row="5"
-                Style="{StaticResource opcionPais}"
-                Value="2"
-                CheckedChanged="radioOpcion_CheckedChanged">
+                <RadioButton
+                    x:Name="radioOpcion2"
+                    Grid.Row="5"
+                    CheckedChanged="radioOpcion_CheckedChanged"
+                    Style="{StaticResource opcionPais}"
+                    Value="2">
 
-                <RadioButton.Content>
-                    <StackLayout>
-                        <Label Style="{StaticResource labelNormal}" Text="Opcion 2" />
-                    </StackLayout>
-                </RadioButton.Content>
-            </RadioButton>
+                    <RadioButton.Content>
+                        <StackLayout>
+                            <Label Style="{StaticResource labelNormal}" Text="Opcion 2" />
+                        </StackLayout>
+                    </RadioButton.Content>
+                </RadioButton>
 
-            <RadioButton
-                x:Name="radioOpcion3"
-                Grid.Row="6"
-                Style="{StaticResource opcionPais}"
-                Value="3"
-                CheckedChanged="radioOpcion_CheckedChanged">
+                <RadioButton
+                    x:Name="radioOpcion3"
+                    Grid.Row="6"
+                    CheckedChanged="radioOpcion_CheckedChanged"
+                    Style="{StaticResource opcionPais}"
+                    Value="3">
 
-                <RadioButton.Content>
-                    <StackLayout>
-                        <Label Style="{StaticResource labelNormal}" Text="Opcion 3" />
-                    </StackLayout>
-                </RadioButton.Content>
-            </RadioButton>
+                    <RadioButton.Content>
+                        <StackLayout>
+                            <Label Style="{StaticResource labelNormal}" Text="Opcion 3" />
+                        </StackLayout>
+                    </RadioButton.Content>
+                </RadioButton>
 
-            <RadioButton
-                x:Name="radioOpcion4"
-                Grid.Row="7"
-                Style="{StaticResource opcionPais}"
-                Value="4"
-                CheckedChanged="radioOpcion_CheckedChanged">
+                <RadioButton
+                    x:Name="radioOpcion4"
+                    Grid.Row="7"
+                    CheckedChanged="radioOpcion_CheckedChanged"
+                    Style="{StaticResource opcionPais}"
+                    Value="4">
 
-                <RadioButton.Content>
-                    <StackLayout>
-                        <Label Style="{StaticResource labelNormal}" Text="Opcion 4" />
-                    </StackLayout>
-                </RadioButton.Content>
-            </RadioButton>
+                    <RadioButton.Content>
+                        <StackLayout>
+                            <Label Style="{StaticResource labelNormal}" Text="Opcion 4" />
+                        </StackLayout>
+                    </RadioButton.Content>
+                </RadioButton>
 
-            <Button
-                x:Name="btnResponder"
-                Grid.Row="8"
-                Style="{StaticResource botonPrincipal}"
-                Text="Enviar respuesta"
-                Clicked="btnResponder_Clicked"/>
+                <Button
+                    x:Name="btnResponder"
+                    Grid.Row="8"
+                    Clicked="btnResponder_Clicked"
+                    IsEnabled="False"
+                    Style="{StaticResource botonPrincipal}"
+                    Text="Enviar respuesta" />
 
-            <Label
-                x:Name="labelRespuesta"
-                Grid.Row="9"
-                Style="{StaticResource labelSubtitulo}"
-                Text="Respuesta: ... " />
+                <Label
+                    x:Name="labelRespuesta"
+                    Grid.Row="9"
+                    Style="{StaticResource labelSubtitulo}"
+                    Text="Respuesta: ... " />
 
-        </Grid>
+                <Button
+                    x:Name="btnVerDetalle"
+                    Grid.Row="10"
+                    Clicked="btnVerDetalle_Clicked"
+                    IsEnabled="False"
+                    Style="{StaticResource botonPrincipal}"
+                    Text="Ver detalle" />
+            </Grid>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

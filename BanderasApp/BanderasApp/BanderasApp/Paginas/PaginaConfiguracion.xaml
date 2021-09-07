@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="BanderasApp.Paginas.PaginaConfiguracion"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Configuracion"
+    BackgroundColor="{AppThemeBinding Dark={StaticResource colorFondo},
+                                      Light={StaticResource colorFondoClaro}}">
+    <ContentPage.Content>
+        <Grid
+            ColumnDefinitions="*,2*,30"
+            RowDefinitions="Auto,Auto"
+            Style="{StaticResource gridContenido}">
+            <Label
+                Grid.Row="0"
+                Grid.Column="0"
+                Style="{StaticResource labelSubtitulo}"
+                Text="Puntos: "
+                VerticalOptions="Center" />
+
+            <Stepper
+                x:Name="stepPuntos"
+                Grid.Row="0"
+                Grid.Column="1"
+                BackgroundColor="{AppThemeBinding Dark={StaticResource colorPrincipal},
+                                                  Light={StaticResource colorPrincipalClaro}}"
+                HorizontalOptions="Center"
+                Increment="10"
+                Maximum="50"
+                Minimum="10" />
+
+            <Label
+                Grid.Row="0"
+                Grid.Column="2"
+                Style="{StaticResource labelSubtitulo}"
+                Text="{Binding Source={x:Reference stepPuntos}, Path=Value}"
+                VerticalOptions="Center" />
+
+            <Button
+                x:Name="btnGuardar"
+                Grid.Row="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Clicked="btnGuardar_Clicked"
+                Style="{StaticResource botonPrincipal}"
+                Text="Guardar" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="BanderasApp.Paginas.PaginaDetalle"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controles="clr-namespace:BanderasApp.Controles"
+    Title="Detalle del País">
+    <ContentPage.Content>
+        <StackLayout>
+            <controles:TarjetaView
+                x:Name="tarjetaPais"
+                ColorBorde="Red"
+                ColorFondo="{AppThemeBinding Dark={StaticResource colorFondo},
+                                             Light={StaticResource colorFondoClaro}}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

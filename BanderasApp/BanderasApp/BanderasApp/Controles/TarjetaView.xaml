@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="BanderasApp.Controles.TarjetaView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Name="this">
+    <ContentView.Content>
+        <Frame
+            Margin="{StaticResource margen}"
+            Padding="8"
+            BackgroundColor="{Binding ColorFondo}"
+            BindingContext="{x:Reference this}"
+            BorderColor="{Binding ColorBorde}"
+            CornerRadius="10"
+            HasShadow="True"
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+            <Grid
+                ColumnDefinitions="Auto,*"
+                RowDefinitions="200,4,Auto,Auto,Auto,Auto,Auto"
+                Style="{StaticResource gridContenido}">
+                <Image
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    HorizontalOptions="Center"
+                    Source="{Binding ImagenBandera}"
+                    Style="{StaticResource bandera}"
+                    VerticalOptions="Center" />
+                <BoxView
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    BackgroundColor="{Binding ColorBorde, FallbackValue='Red'}"
+                    HeightRequest="2"
+                    HorizontalOptions="Fill" />
+                <Label
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Style="{StaticResource labelTitulo}"
+                    Text="{Binding NombrePais, FallbackValue='Nombre del Pais'}" />
+                <Label
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Style="{StaticResource labelSubtitulo}"
+                    Text="Capital: " />
+                <Label
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Style="{StaticResource labelNormal}"
+                    Text="{Binding Capital, FallbackValue='...'}" />
+                <Label
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Style="{StaticResource labelSubtitulo}"
+                    Text="Continente: " />
+                <Label
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    Style="{StaticResource labelNormal}"
+                    Text="{Binding Continente, FallbackValue='...'}" />
+                <Label
+                    Grid.Row="5"
+                    Grid.Column="0"
+                    Style="{StaticResource labelSubtitulo}"
+                    Text="Moneda: " />
+                <Label
+                    Grid.Row="5"
+                    Grid.Column="1"
+                    Style="{StaticResource labelNormal}"
+                    Text="{Binding Moneda, FallbackValue='...'}" />
+                <Label
+                    Grid.Row="6"
+                    Grid.Column="0"
+                    Style="{StaticResource labelSubtitulo}"
+                    Text="Población: " />
+                <Label
+                    Grid.Row="6"
+                    Grid.Column="1"
+                    Style="{StaticResource labelNormal}"
+                    Text="{Binding Poblacion, FallbackValue='...', StringFormat='{0:N0} habitantes'}" />
+            </Grid>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

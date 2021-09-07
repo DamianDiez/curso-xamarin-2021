@@ -5,12 +5,17 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <Application.Resources>
         <Color x:Key="colorFondo">#152F3E</Color>
+        <Color x:Key="colorFondoClaro">#e0f2aa</Color>
+
         <Color x:Key="colorPrincipal">#FFA700</Color>
         <Color x:Key="colorSecundario">#FAE072</Color>
+        <Color x:Key="colorPrincipalClaro">#001f8b</Color>
+        <Color x:Key="colorSecundarioClaro">#5e9a2a</Color>
+
         <x:Double x:Key="espacio">5</x:Double>
 
-        <SolidColorBrush x:Key="brochaPrincipal" Color="{StaticResource colorPrincipal}" />
-        <SolidColorBrush x:Key="brochaSecundaria" Color="{StaticResource colorSecundario}" />
+        <SolidColorBrush x:Key="brochaPrincipal" Color="{AppThemeBinding Dark={StaticResource colorPrincipal}, Light={StaticResource colorPrincipalClaro}}" />
+        <SolidColorBrush x:Key="brochaSecundaria" Color="{AppThemeBinding Dark={StaticResource colorSecundario}, Light={StaticResource colorSecundarioClaro}}" />
 
         <Thickness x:Key="margen">10</Thickness>
 
@@ -22,7 +27,7 @@
 
         <Style x:Key="labelPrincipal" TargetType="Label">
             <Setter Property="FontSize" Value="Large" />
-            <Setter Property="TextColor" Value="{StaticResource colorPrincipal}" />
+            <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource colorPrincipal}, Light={StaticResource colorPrincipalClaro}}" />
             <Setter Property="FontFamily" Value="MuliBold" />
             <Setter Property="FontAttributes" Value="Bold" />
         </Style>
@@ -50,7 +55,7 @@
             BasedOn="{StaticResource labelNormal}"
             TargetType="Label">
             <Setter Property="FontAttributes" Value="Italic" />
-            <Setter Property="TextColor" Value="{StaticResource colorSecundario}" />
+            <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource colorSecundario}, Light={StaticResource colorSecundarioClaro}}" />
         </Style>
 
         <Style x:Key="bandera" TargetType="Image">
@@ -63,13 +68,15 @@
         <ControlTemplate x:Key="RadioButtonTemplate">
             <Frame
                 Padding="0"
-                BackgroundColor="{StaticResource colorFondo}"
-                BorderColor="{StaticResource colorFondo}"
+                BackgroundColor="{AppThemeBinding Dark={StaticResource colorFondo},
+                                                  Light={StaticResource colorFondoClaro}}"
+                BorderColor="{AppThemeBinding Dark={StaticResource colorFondo},
+                                              Light={StaticResource colorFondoClaro}}"
                 HasShadow="False"
-                WidthRequest="300"
                 HeightRequest="40"
                 HorizontalOptions="Start"
-                VerticalOptions="Start">
+                VerticalOptions="Start"
+                WidthRequest="300">
                 <Grid Margin="4" WidthRequest="300">
                     <Grid
                         HeightRequest="18"
@@ -98,14 +105,14 @@
                         <VisualStateGroup x:Name="CheckedStates">
                             <VisualState x:Name="Checked">
                                 <VisualState.Setters>
-                                    <Setter Property="BorderColor" Value="{StaticResource colorPrincipal}" />
+                                    <Setter Property="BorderColor" Value="{AppThemeBinding Dark={StaticResource colorPrincipal}, Light={StaticResource colorPrincipalClaro}}" />
                                     <Setter TargetName="check" Property="Opacity" Value="1" />
                                 </VisualState.Setters>
                             </VisualState>
                             <VisualState x:Name="Unchecked">
                                 <VisualState.Setters>
-                                    <Setter Property="BackgroundColor" Value="{StaticResource colorFondo}" />
-                                    <Setter Property="BorderColor" Value="{StaticResource colorFondo}" />
+                                    <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource colorFondo}, Light={StaticResource colorFondoClaro}}" />
+                                    <Setter Property="BorderColor" Value="{AppThemeBinding Dark={StaticResource colorFondo}, Light={StaticResource colorFondoClaro}}" />
                                     <Setter TargetName="check" Property="Opacity" Value="0" />
                                 </VisualState.Setters>
                             </VisualState>
@@ -121,7 +128,7 @@
 
         <Style x:Key="botonPrincipal" TargetType="Button">
             <Setter Property="Background" Value="{StaticResource brochaSecundaria}" />
-            <Setter Property="TextColor" Value="{StaticResource colorFondo}" />
+            <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource colorFondo}, Light={StaticResource colorFondoClaro}}" />
             <Setter Property="CornerRadius" Value="20" />
             <Setter Property="HorizontalOptions" Value="Center" />
             <Setter Property="WidthRequest" Value="200" />
