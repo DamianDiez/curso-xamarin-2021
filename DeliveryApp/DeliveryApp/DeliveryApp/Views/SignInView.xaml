@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="DeliveryApp.Views.SignInView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <Grid
+            ColumnDefinitions="*"
+            RowDefinitions="*,*,Auto,Auto,Auto,Auto,*,*"
+            Style="{StaticResource StyleGrid}">
+            <Label
+                Grid.Row="0"
+                HorizontalOptions="End"
+                Style="{StaticResource StyleLabelUnderline}"
+                Text="Sign Up" />
+
+            <Label
+                Grid.Row="1"
+                Style="{StaticResource StyleLabelTitle}"
+                Text="Sign In" />
+
+            <Label
+                Grid.Row="2"
+                Style="{StaticResource StyleLabelNormal}"
+                Text="Email" />
+
+            <Entry Grid.Row="3" Style="{StaticResource StyleEntryPrincipal}" />
+
+            <Label
+                Grid.Row="4"
+                Style="{StaticResource StyleLabelNormal}"
+                Text="Password" />
+
+            <Entry
+                Grid.Row="5"
+                IsPassword="True"
+                Placeholder="Must be at least 6 characters"
+                Style="{StaticResource StyleEntryPrincipal}" />
+
+            <Button
+                Grid.Row="6"
+                Style="{StaticResource StyleButtonPrincipal}"
+                Text="Login"
+                VerticalOptions="End" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

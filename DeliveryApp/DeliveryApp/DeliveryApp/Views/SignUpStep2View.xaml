@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DeliveryApp.Views.SignUpStep2View">
+    <ContentPage.Content>
+        <Grid
+            ColumnDefinitions="*"
+            RowDefinitions="*,*,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,*,*"
+            Style="{StaticResource StyleGrid}">
+            <Label
+                Grid.Row="0"
+                HorizontalOptions="End"
+                Style="{StaticResource StyleLabelUnderline}"
+                Text="Log In" />
+
+            <Label
+                Grid.Row="1"
+                Style="{StaticResource StyleLabelTitle}"
+                Text="Sign Up" />
+
+            <Label
+                Grid.Row="2"
+                Style="{StaticResource StyleLabelNormal}"
+                Text="User Name" />
+
+            <Entry
+                Grid.Row="3"
+                Style="{StaticResource StyleEntryPrincipal}" />
+
+            <Label
+                Grid.Row="4"
+                Style="{StaticResource StyleLabelNormal}"
+                Text="Email" />
+
+            <Entry
+                Grid.Row="5"
+                Keyboard="Email"
+                Style="{StaticResource StyleEntryPrincipal}" />
+
+            <Label
+                Grid.Row="6"
+                Style="{StaticResource StyleLabelNormal}"
+                Text="Password" />
+
+            <Entry
+                Grid.Row="7"
+                IsPassword="True"
+                Placeholder="Must be at least 6 characters"
+                Style="{StaticResource StyleEntryPrincipal}" />
+
+            <Label
+                Grid.Row="8"
+                Style="{StaticResource StyleLabelNormal}"
+                Text="Confirm Password" />
+
+            <Entry
+                Grid.Row="9"
+                IsPassword="True"
+                Placeholder="Must be at least 6 characters"
+                Style="{StaticResource StyleEntryPrincipal}" />
+
+            <Button
+                Grid.Row="11"
+                Style="{StaticResource StyleButtonPrincipal}"
+                Text="Sign Up"
+                VerticalOptions="End" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

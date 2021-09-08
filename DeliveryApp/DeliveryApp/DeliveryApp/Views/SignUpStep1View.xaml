@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="DeliveryApp.Views.SignUpStep1View"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <Grid
+            ColumnDefinitions="*"
+            RowDefinitions="*,*,Auto,Auto,Auto,*,Auto,Auto,Auto,2*"
+            Style="{StaticResource StyleGrid}">
+            <Label
+                Grid.Row="0"
+                HorizontalOptions="End"
+                Style="{StaticResource StyleLabelUnderline}"
+                Text="Log In" />
+
+            <Label
+                Grid.Row="1"
+                Style="{StaticResource StyleLabelTitle}"
+                Text="Sign Up" />
+
+            <Label
+                Grid.Row="2"
+                Style="{StaticResource StyleLabelNormal}"
+                Text="Phone Number" />
+
+            <Entry
+                Grid.Row="3"
+                Keyboard="Telephone"
+                Style="{StaticResource StyleEntryPrincipal}" />
+
+            <Button
+                Grid.Row="4"
+                Style="{StaticResource StyleButtonPrincipal}"
+                Text="Send"
+                VerticalOptions="End" />
+
+            <Label
+                Grid.Row="6"
+                Style="{StaticResource StyleLabelNormal}"
+                Text="Pin Code" />
+
+            <Entry
+                Grid.Row="7"
+                Keyboard="Numeric"
+                Style="{StaticResource StyleEntryPrincipal}" />
+
+            <Button
+                Grid.Row="8"
+                Style="{StaticResource StyleButtonPrincipal}"
+                Text="Validate"
+                VerticalOptions="End" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

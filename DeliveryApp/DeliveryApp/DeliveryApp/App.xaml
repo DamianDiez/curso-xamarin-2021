@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application
+    x:Class="DeliveryApp.App"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Application.Resources>
+        <Color x:Key="StyleDarkAppBackground">#152f3e</Color>
+        <Color x:Key="StyleLightAppBackground">#eee</Color>
+
+        <Color x:Key="StyleDarkAppPrincipal">#eee</Color>
+        <Color x:Key="StyleLightAppPrincipal">#152f3e</Color>
+
+        <Color x:Key="StyleDarkAppSecondary">#ccc</Color>
+        <Color x:Key="StyleLightAppSecondary">#001f8b</Color>
+
+        <x:Double x:Key="StyleSpacing">10</x:Double>
+
+        <Thickness x:Key="StyleMarginNarrow">10</Thickness>
+        <Thickness x:Key="StyleMarginWide">20</Thickness>
+
+        <SolidColorBrush x:Key="StyleBrushPrincipal" Color="{AppThemeBinding Dark={StaticResource StyleDarkAppPrincipal}, Light={StaticResource StyleLightAppPrincipal}}" />
+
+
+        <SolidColorBrush x:Key="StyleBrushSecondary" Color="{AppThemeBinding Dark={StaticResource StyleDarkAppSecondary}, Light={StaticResource StyleLightAppSecondary}}" />
+
+        <Style x:Key="StyleGrid" TargetType="Grid">
+            <Setter Property="Margin" Value="{StaticResource StyleMarginWide}" />
+            <Setter Property="RowSpacing" Value="{StaticResource StyleSpacing}" />
+            <Setter Property="ColumnSpacing" Value="{StaticResource StyleSpacing}" />
+        </Style>
+
+        <Style x:Key="StyleLabelPrincipal" TargetType="Label">
+            <Setter Property="FontSize" Value="Large" />
+            <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource StyleDarkAppPrincipal}, Light={StaticResource StyleLightAppPrincipal}}" />
+            <Setter Property="FontAttributes" Value="Bold" />
+        </Style>
+
+        <Style
+            x:Key="StyleLabelTitle"
+            BasedOn="{StaticResource StyleLabelPrincipal}"
+            TargetType="Label">
+            <Setter Property="FontSize" Value="Title" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+        </Style>
+
+        <Style
+            x:Key="StyleLabelNormal"
+            BasedOn="{StaticResource StyleLabelPrincipal}"
+            TargetType="Label">
+            <Setter Property="FontSize" Value="Medium" />
+            <Setter Property="FontAttributes" Value="None" />
+            <Setter Property="HorizontalOptions" Value="Start" />
+        </Style>
+
+        <Style
+            x:Key="StyleLabelSubtitle"
+            BasedOn="{StaticResource StyleLabelNormal}"
+            TargetType="Label">
+            <Setter Property="FontAttributes" Value="Italic" />
+            <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource StyleDarkAppSecondary}, Light={StaticResource StyleLightAppSecondary}}" />
+        </Style>
+
+        <Style
+            x:Key="StyleLabelUnderline"
+            BasedOn="{StaticResource StyleLabelNormal}"
+            TargetType="Label">
+            <Setter Property="TextDecorations" Value="Underline" />
+            <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource StyleDarkAppSecondary}, Light={StaticResource StyleLightAppSecondary}}" />
+        </Style>
+
+        <Style x:Key="StyleEntryPrincipal" TargetType="Entry">
+            <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource StyleDarkAppPrincipal}, Light={StaticResource StyleLightAppPrincipal}}" />
+        </Style>
+
+        <Style x:Key="StyleButtonPrincipal" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource StyleBrushSecondary}" />
+            <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource StyleDarkAppBackground}, Light={StaticResource StyleLightAppBackground}}" />
+            <Setter Property="CornerRadius" Value="5" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="WidthRequest" Value="300" />
+        </Style>
+    </Application.Resources>
+</Application>
