@@ -27,10 +27,12 @@
             <Entry
                 Grid.Row="3"
                 Keyboard="Telephone"
-                Style="{StaticResource StyleEntryPrincipal}" />
+                Style="{StaticResource StyleEntryPrincipal}"
+                Text="{Binding PhoneNumber}" />
 
             <Button
                 Grid.Row="4"
+                Command="{Binding SendCommand}"
                 Style="{StaticResource StyleButtonPrincipal}"
                 Text="Send"
                 VerticalOptions="End" />
@@ -43,10 +45,12 @@
             <Entry
                 Grid.Row="7"
                 Keyboard="Numeric"
-                Style="{StaticResource StyleEntryPrincipal}" />
+                Style="{StaticResource StyleEntryPrincipal}"
+                Text="{Binding PinCode}" />
 
             <Button
                 Grid.Row="8"
+                Command="{Binding ValidateCommand}"
                 Style="{StaticResource StyleButtonPrincipal}"
                 Text="Validate"
                 VerticalOptions="End" />

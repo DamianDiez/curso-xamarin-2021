@@ -25,6 +25,7 @@
 
             <Entry
                 Grid.Row="3"
+                Text="{Binding NewUser.UserName}"
                 Style="{StaticResource StyleEntryPrincipal}" />
 
             <Label
@@ -35,6 +36,7 @@
             <Entry
                 Grid.Row="5"
                 Keyboard="Email"
+                Text="{Binding NewUser.Email}"
                 Style="{StaticResource StyleEntryPrincipal}" />
 
             <Label
@@ -45,6 +47,7 @@
             <Entry
                 Grid.Row="7"
                 IsPassword="True"
+                Text="{Binding NewUser.Password}"
                 Placeholder="Must be at least 6 characters"
                 Style="{StaticResource StyleEntryPrincipal}" />
 
@@ -56,6 +59,7 @@
             <Entry
                 Grid.Row="9"
                 IsPassword="True"
+                Text="{Binding PasswordCheck}"
                 Placeholder="Must be at least 6 characters"
                 Style="{StaticResource StyleEntryPrincipal}" />
 
@@ -63,6 +67,7 @@
                 Grid.Row="11"
                 Style="{StaticResource StyleButtonPrincipal}"
                 Text="Sign Up"
+                Command="{Binding SignUpCommand}"
                 VerticalOptions="End" />
         </Grid>
     </ContentPage.Content>

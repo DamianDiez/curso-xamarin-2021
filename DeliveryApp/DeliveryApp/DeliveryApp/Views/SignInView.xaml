@@ -24,7 +24,9 @@
                 Style="{StaticResource StyleLabelNormal}"
                 Text="Email" />
 
-            <Entry Grid.Row="3" Style="{StaticResource StyleEntryPrincipal}" />
+            <Entry Grid.Row="3" 
+                   Text="{Binding Email}"
+                   Style="{StaticResource StyleEntryPrincipal}" />
 
             <Label
                 Grid.Row="4"
@@ -34,12 +36,14 @@
             <Entry
                 Grid.Row="5"
                 IsPassword="True"
+                Text="{Binding Password}"
                 Placeholder="Must be at least 6 characters"
                 Style="{StaticResource StyleEntryPrincipal}" />
 
             <Button
                 Grid.Row="6"
                 Style="{StaticResource StyleButtonPrincipal}"
+                Command="{Binding SignInCommand}"
                 Text="Login"
                 VerticalOptions="End" />
         </Grid>

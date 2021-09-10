@@ -7,21 +7,14 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using DeliveryApp.ViewModels;
-
 namespace DeliveryApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SignUpStep1View : ContentPage
+    public partial class AppShellMenu : ContentPage
     {
-        SignUpStep1ViewModel vm;
-
-        public SignUpStep1View()
+        public AppShellMenu()
         {
             InitializeComponent();
-
-            vm = new SignUpStep1ViewModel(this.Navigation);
-            BindingContext = vm;
         }
     }
 }

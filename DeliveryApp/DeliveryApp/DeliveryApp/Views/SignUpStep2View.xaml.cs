@@ -7,14 +7,21 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using DeliveryApp.ViewModels;
+
 namespace DeliveryApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SignUpStep2View : ContentPage
     {
-        public SignUpStep2View()
+        SignUpStep2ViewModel vm;
+
+        public SignUpStep2View(string phoneNumber)
         {
             InitializeComponent();
+
+            vm = new SignUpStep2ViewModel(phoneNumber);
+            BindingContext = vm;
         }
     }
 }
