@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace DeliveryApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AppShellMenu : ContentPage
+    public partial class AppShellMenu : Shell
     {
         public AppShellMenu()
         {

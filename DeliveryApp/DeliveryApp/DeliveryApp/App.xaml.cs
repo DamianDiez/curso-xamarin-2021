@@ -13,7 +13,8 @@ namespace DeliveryApp
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Views.SignUpStep1View());
+            //MainPage = new NavigationPage(new Views.SignUpStep1View());
+            MainPage = new Views.AppShellMenu();
         }
 
         protected override void OnStart()

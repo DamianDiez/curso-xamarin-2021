@@ -1,12 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DeliveryApp.Views.AppShellMenu">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
-</ContentPage>
+<Shell
+    x:Class="DeliveryApp.Views.AppShellMenu"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:DeliveryApp.Views"
+    FlyoutBehavior="Flyout">
+    <FlyoutItem Title="Delivery App" FlyoutDisplayOptions="AsMultipleItems">
+        <Tab Title="Products">
+            <ShellContent Title="Products" ContentTemplate="{DataTemplate views:AllProductsView}" />
+        </Tab>
+    </FlyoutItem>
+</Shell>
