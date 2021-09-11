@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="DeliveryApp.Views.WelcomeView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Welcome">
+    <ContentPage.Content>
+        <StackLayout Margin="{StaticResource StyleMarginNarrow}" Spacing="{StaticResource StyleSpacing}">
+            <ActivityIndicator
+                HeightRequest="20"
+                HorizontalOptions="Center"
+                IsRunning="{Binding IsBusy}"
+                VerticalOptions="Center" />
+
+            <Label FontSize="Large" Text="Hot Deals" />
+
+            <CarouselView
+                CurrentItem="{Binding SelectedHotDeal}"
+                IndicatorView="indicatorViewHotDeals"
+                ItemTemplate="{StaticResource ProductTemplate}"
+                ItemsSource="{Binding HotDealsCollection}"
+                PeekAreaInsets="100">
+                <CarouselView.ItemsLayout>
+                    <LinearItemsLayout
+                        ItemSpacing="10"
+                        Orientation="Horizontal"
+                        SnapPointsAlignment="Center"
+                        SnapPointsType="Mandatory" />
+                </CarouselView.ItemsLayout>
+            </CarouselView>
+
+            <IndicatorView
+                x:Name="indicatorViewHotDeals"
+                HorizontalOptions="Center"
+                IndicatorColor="Red"
+                SelectedIndicatorColor="DarkRed" />
+
+            <Label FontSize="Large" Text="Popular Products" />
+
+            <CarouselView
+                CurrentItem="{Binding SelectedPopular}"
+                IndicatorView="indicatorViewPopular"
+                ItemTemplate="{StaticResource ProductTemplate}"
+                ItemsSource="{Binding PopularProductsCollection}"
+                Loop="False" />
+
+            <IndicatorView
+                x:Name="indicatorViewPopular"
+                HorizontalOptions="Center"
+                IndicatorColor="LightBlue"
+                IndicatorSize="18"
+                IndicatorsShape="Square"
+                SelectedIndicatorColor="Blue" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
