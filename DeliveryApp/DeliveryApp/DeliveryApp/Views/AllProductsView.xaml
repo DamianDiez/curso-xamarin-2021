@@ -3,13 +3,7 @@
     x:Class="DeliveryApp.Views.AllProductsView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:converters="clr-namespace:DeliveryApp.Converters"
     Title="All Products">
-
-    <ContentPage.Resources>
-        <converters:NewProductConverter x:Key="newProductConverter" />
-        <converters:DiscountConverter x:Key="discountConverter" />
-    </ContentPage.Resources>
 
     <ContentPage.Content>
         <Grid Margin="{StaticResource StyleMarginNarrow}">
@@ -17,8 +11,15 @@
                 HorizontalOptions="Center"
                 IsRunning="{Binding IsBusy}"
                 VerticalOptions="Center" />
-
-            <CollectionView ItemsSource="{Binding ProductCollection}">
+            
+            <CollectionView
+                ItemsSource="{Binding ProductCollection}"
+                SelectedItem="{Binding SelectedProduct}"
+                SelectionChangedCommand="{Binding GoToProductDetailCommand}"
+                RemainingItemsThreshold="0"
+                RemainingItemsThresholdReachedCommand="{Binding LoadMoreCommand}"
+                ItemTemplate="{StaticResource ProductTemplate}"
+                SelectionMode="Single">
                 <CollectionView.ItemsLayout>
                     <GridItemsLayout
                         HorizontalItemSpacing="10"
@@ -26,105 +27,8 @@
                         Span="3"
                         VerticalItemSpacing="20" />
                 </CollectionView.ItemsLayout>
-
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Frame
-                            Padding="0"
-                            BorderColor="Gray"
-                            CornerRadius="15"
-                            HasShadow="True"
-                            HeightRequest="200"
-                            HorizontalOptions="Start"
-                            IsClippedToBounds="True">
-                            <Grid
-                                ColumnDefinitions="*,*"
-                                ColumnSpacing="0"
-                                RowDefinitions="*,100,2*,*"
-                                RowSpacing="0">
-
-                                <Frame
-                                    Grid.Row="0"
-                                    Grid.Column="0"
-                                    Margin="3"
-                                    Padding="0"
-                                    BackgroundColor="Green"
-                                    BorderColor="Green"
-                                    CornerRadius="5"
-                                    HasShadow="False"
-                                    HorizontalOptions="Start"
-                                    IsClippedToBounds="True"
-                                    IsVisible="{Binding ReleaseDate, Converter={StaticResource newProductConverter}}">
-                                    <Label
-                                        FontAttributes="Bold"
-                                        FontSize="Small"
-                                        HorizontalOptions="Center"
-                                        Text="  NEW  "
-                                        TextColor="#FAE072" />
-                                </Frame>
-
-                                <Frame
-                                    Grid.Row="0"
-                                    Grid.Column="1"
-                                    Margin="3"
-                                    Padding="0"
-                                    BackgroundColor="Red"
-                                    BorderColor="Red"
-                                    CornerRadius="5"
-                                    HasShadow="False"
-                                    HorizontalOptions="End"
-                                    IsClippedToBounds="True"
-                                    IsVisible="{Binding Discount, Converter={StaticResource discountConverter}}">
-                                    <Label
-                                        FontAttributes="Bold"
-                                        FontSize="Small"
-                                        HorizontalOptions="Center"
-                                        Text="{Binding Discount, StringFormat=' {0:N2} %'}"
-                                        TextColor="#FAE072" />
-
-                                </Frame>
-
-                                <Image
-                                    Grid.Row="1"
-                                    Grid.Column="0"
-                                    Grid.ColumnSpan="2"
-                                    Margin="3"
-                                    Aspect="AspectFill"
-                                    Source="{Binding PictureUrl}" />
-
-                                <Label
-                                    Grid.Row="2"
-                                    Grid.Column="0"
-                                    Grid.ColumnSpan="2"
-                                    FontSize="Medium"
-                                    HorizontalOptions="Center"
-                                    Text="{Binding Name}"
-                                    TextColor="DarkBlue"
-                                    VerticalOptions="Center" />
-
-                                <Label
-                                    Grid.Row="3"
-                                    Grid.Column="0"
-                                    Margin="3"
-                                    FontSize="Small"
-                                    HorizontalOptions="Start"
-                                    Text="{Binding RealPrice, StringFormat='{0:C2}'}"
-                                    TextColor="ForestGreen" />
-
-                                <Label
-                                    Grid.Row="3"
-                                    Grid.Column="1"
-                                    Margin="3"
-                                    FontSize="Small"
-                                    HorizontalOptions="End"
-                                    Text="{Binding OriginalPrice, StringFormat='{0:C2}'}"
-                                    TextColor="Gray"
-                                    TextDecorations="Strikethrough" />
-                            </Grid>
-                        </Frame>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
             </CollectionView>
+
         </Grid>
     </ContentPage.Content>
 </ContentPage>

@@ -13,7 +13,7 @@ namespace DeliveryApp.Converters
             double discount = 0;
             double.TryParse(value.ToString(), out discount);
 
-            return discount > 0;
+            return discount > 0 ? 1 : 0;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

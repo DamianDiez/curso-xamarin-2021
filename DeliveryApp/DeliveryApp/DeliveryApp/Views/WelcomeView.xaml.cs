@@ -8,15 +8,15 @@ using DeliveryApp.ViewModels;
 namespace DeliveryApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AllProductsView : ContentPage
+    public partial class WelcomeView : ContentPage
     {
-        AllProductsViewModel vm;
+        WelcomeViewModel vm;
 
-        public AllProductsView()
+        public WelcomeView()
         {
             InitializeComponent();
 
-            vm = new AllProductsViewModel();
+            vm = new WelcomeViewModel();
             BindingContext = vm;
         }
 
@@ -24,8 +24,11 @@ namespace DeliveryApp.Views
         {
             base.OnAppearing();
 
-            await Task.Run(() => vm.LoadDataCommand.Execute(null));
-            vm.SelectedProduct = null;
+            await Task.Run(() => vm.LoadHotDealsCommand.Execute(null));
+            await Task.Run(() => vm.LoadPopularsCommand.Execute(null));
+
+            vm.SelectedHotDeal = null;
+            vm.SelectedPopular = null;
         }
     }
 }

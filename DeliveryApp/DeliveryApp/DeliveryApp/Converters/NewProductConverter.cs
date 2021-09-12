@@ -14,10 +14,10 @@ namespace DeliveryApp.Converters
             {
                 var today = DateTime.Now;
                 var days = (today - productDate).TotalDays;
-                return days < 7;
+                return days < 7 ? 1 : 0;
             }
 
-            return false;
+            return 0;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

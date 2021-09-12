@@ -6,6 +6,10 @@
     xmlns:views="clr-namespace:DeliveryApp.Views"
     FlyoutBehavior="Flyout">
     <FlyoutItem Title="Delivery App" FlyoutDisplayOptions="AsMultipleItems">
+        <Tab Title="Welcome">
+            <ShellContent Title="Welcome" ContentTemplate="{DataTemplate views:WelcomeView}" />
+        </Tab>
+
         <Tab Title="Products">
             <ShellContent Title="Products" ContentTemplate="{DataTemplate views:AllProductsView}" />
         </Tab>
