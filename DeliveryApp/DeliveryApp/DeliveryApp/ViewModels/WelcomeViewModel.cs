@@ -85,7 +85,8 @@ namespace DeliveryApp.ViewModels
         private void SetProductCollection(ObservableCollection<Product> productCollection,
             List<Product> products)
         {
-            productCollection.Clear();
+            while (productCollection.Count > 0)
+                productCollection.RemoveAt(0);
 
             foreach (var item in products)
             {
