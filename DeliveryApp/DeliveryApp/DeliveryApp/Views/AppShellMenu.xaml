@@ -13,5 +13,9 @@
         <Tab Title="Products">
             <ShellContent Title="Products" ContentTemplate="{DataTemplate views:AllProductsView}" />
         </Tab>
+
+        <Tab Title="My Account">
+            <ShellContent Title="My Account" ContentTemplate="{DataTemplate views:UserAccountView}" />
+        </Tab>
     </FlyoutItem>
 </Shell>

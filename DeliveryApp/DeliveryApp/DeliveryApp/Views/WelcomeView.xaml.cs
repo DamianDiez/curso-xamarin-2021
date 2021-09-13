@@ -29,6 +29,9 @@ namespace DeliveryApp.Views
 
             vm.SelectedHotDeal = null;
             vm.SelectedPopular = null;
+            
+            //carouselHotDeals.IndicatorView = indicatorViewHotDeals;
+            //carouselPopular.IndicatorView = indicatorViewPopular;
         }
     }
 }

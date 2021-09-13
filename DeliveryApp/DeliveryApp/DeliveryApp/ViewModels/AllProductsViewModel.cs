@@ -15,7 +15,7 @@ namespace DeliveryApp.ViewModels
     {
         private List<Product> products;
 
-        public ObservableCollection<Product> ProductCollection { get; set; }
+        public ObservableCollection<Product> ProductCollection { get; }
 
         private Product selectedProduct;
 

@@ -15,8 +15,8 @@
             <Label FontSize="Large" Text="Hot Deals" />
 
             <CarouselView
+                x:Name="carouselHotDeals"
                 CurrentItem="{Binding SelectedHotDeal}"
-                IndicatorView="indicatorViewHotDeals"
                 ItemTemplate="{StaticResource ProductTemplate}"
                 ItemsSource="{Binding HotDealsCollection}"
                 PeekAreaInsets="100">
@@ -38,8 +38,8 @@
             <Label FontSize="Large" Text="Popular Products" />
 
             <CarouselView
+                x:Name="carouselPopular"
                 CurrentItem="{Binding SelectedPopular}"
-                IndicatorView="indicatorViewPopular"
                 ItemTemplate="{StaticResource ProductTemplate}"
                 ItemsSource="{Binding PopularProductsCollection}"
                 Loop="False" />

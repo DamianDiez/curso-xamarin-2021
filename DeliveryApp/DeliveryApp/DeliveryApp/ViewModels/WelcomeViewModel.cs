@@ -13,8 +13,6 @@ namespace DeliveryApp.ViewModels
 {
     public class WelcomeViewModel : BaseViewModel
     {
-        private List<Product> products;
-
         public ObservableCollection<Product> HotDealsCollection { get; set; }
         public ObservableCollection<Product> PopularProductsCollection { get; set; }
 
@@ -48,7 +46,7 @@ namespace DeliveryApp.ViewModels
                 IsBusy = true;
 
                 await Task.Delay(4000);
-                products = HardCodeService.GetHotSalesPerPage(page, productsPerPage);
+                var products = HardCodeService.GetHotSalesPerPage(page, productsPerPage);
                 SetProductCollection(HotDealsCollection, products);
 
                 IsBusy = false;
@@ -62,7 +60,7 @@ namespace DeliveryApp.ViewModels
                 IsBusy = true;
 
                 await Task.Delay(4000);
-                products = HardCodeService.GetProductsPerPage(page, productsPerPage);
+                var products = HardCodeService.GetProductsPerPage(page, productsPerPage);
                 SetProductCollection(PopularProductsCollection, products);
 
                 IsBusy = false;

@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="DeliveryApp.Views.UserAccountView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:DeliveryApp.Controls"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
+    <ContentPage.Content>
+        <StackLayout Margin="{StaticResource StyleMarginNarrow}" Spacing="{StaticResource StyleSpacing}">
+            <xct:Expander>
+                <xct:Expander.Header>
+                    <controls:CustomHeader Title="Information" />
+                </xct:Expander.Header>
+            </xct:Expander>
+
+            <xct:Expander>
+                <xct:Expander.Header>
+                    <controls:CustomHeader Title="Settings" />
+                </xct:Expander.Header>
+
+                <xct:Expander.Content>
+                    <Grid
+                        Margin="{StaticResource StyleMarginWide}"
+                        ColumnDefinitions="*,*"
+                        RowDefinitions="Auto,Auto,Auto"
+                        RowSpacing="{StaticResource StyleSpacing}">
+
+                        <Label
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Style="{StaticResource StyleLabelPrincipal}"
+                            Text="Notifications"
+                            VerticalOptions="Center" />
+
+                        <Switch
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            IsToggled="{Binding UserSettings.Notifications}"
+                            OnColor="Green"
+                            ThumbColor="Orange"
+                            VerticalOptions="Center" />
+
+                        <Label
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Text="News"
+                            VerticalOptions="Center" />
+
+                        <Switch
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            IsToggled="{Binding UserSettings.News}"
+                            OnColor="Green"
+                            ThumbColor="Orange"
+                            VerticalOptions="Center" />
+
+                        <Label
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            Text="App Theme"
+                            VerticalOptions="Center" />
+
+                        <Picker
+                            Title="Select an App Theme"
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            SelectedItem="{Binding SelectedAppTheme}"
+                            TitleColor="DarkBlue"
+                            VerticalOptions="Center">
+                            <Picker.Items>
+                                <x:String>Default</x:String>
+                                <x:String>Dark</x:String>
+                                <x:String>Light</x:String>
+                            </Picker.Items>
+                        </Picker>
+
+                    </Grid>
+                </xct:Expander.Content>
+
+            </xct:Expander>
+
+            <xct:Expander>
+                <xct:Expander.Header>
+                    <controls:CustomHeader Title="Order History" />
+                </xct:Expander.Header>
+            </xct:Expander>
+
+            <xct:Expander>
+                <xct:Expander.Header>
+                    <controls:CustomHeader Title="My Shipping Addresses" />
+                </xct:Expander.Header>
+            </xct:Expander>
+
+            <Button Command="{Binding SaveCommand}" Text="Save" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

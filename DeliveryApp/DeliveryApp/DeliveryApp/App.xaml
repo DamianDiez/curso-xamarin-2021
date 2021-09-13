@@ -185,6 +185,5 @@
                 </Grid>
             </Frame>
         </DataTemplate>
-
     </Application.Resources>
 </Application>
